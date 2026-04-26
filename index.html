@@ -628,12 +628,13 @@ footer::before {
 <nav id="mainNav">
   <a href="#hero" class="nav-logo">DICHA</a>
   <div class="nav-right">
-    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">🌒</button>
     <div class="lang-switcher">
       <button class="lang-btn active" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('tr')">TR</button>
       <button class="lang-btn" onclick="setLang('ru')">RU</button>
       <button class="lang-btn" onclick="setLang('gr')">GR</button>
+      <button class="lang-btn" onclick="setLang('fa')">FA</button>
     </div>
   </div>
 </nav>
@@ -1536,7 +1537,7 @@ function setLang(lang) {
 const themeToggleBtn = document.getElementById('themeToggle');
 function toggleTheme() {
   const isDark = document.body.classList.toggle('dark-mode');
-  themeToggleBtn.textContent = isDark ? '☀️' : '🌙';
+  themeToggleBtn.textContent = isDark ? '☀️' : '🌒';
   localStorage.setItem('dicha-theme', isDark ? 'dark' : 'light');
 }
 // Restore saved preference
