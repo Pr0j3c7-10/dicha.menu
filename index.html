@@ -6,7 +6,7 @@
 <title>DICHA — Café & Pâtisserie</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500&family=Vazirmatn:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -81,7 +81,25 @@ body.dark-mode .theme-toggle {
   box-shadow: 0 4px 18px rgba(198,168,90,0.3);
 }
 
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+/* ── RTL (Persian) ── */
+body.rtl {
+  direction: rtl;
+  font-family: 'Vazirmatn', 'Jost', sans-serif;
+}
+body.rtl .section-line {
+  background: linear-gradient(270deg, rgba(198,168,90,0.4), transparent);
+}
+body.rtl .hero-line-bar:first-child {
+  background: linear-gradient(270deg, transparent, var(--gold));
+}
+body.rtl .hero-line-bar:last-child {
+  background: linear-gradient(270deg, var(--gold), transparent);
+}
+body.rtl .card-body { text-align: right; }
+body.rtl .badge { align-self: flex-end; }
+body.rtl .cat-nav-inner { flex-direction: row-reverse; }
+
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -628,7 +646,7 @@ footer::before {
 <nav id="mainNav">
   <a href="#hero" class="nav-logo">DICHA</a>
   <div class="nav-right">
-    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">🌒</button>
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">🌙</button>
     <div class="lang-switcher">
       <button class="lang-btn active" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('tr')">TR</button>
@@ -1060,54 +1078,78 @@ footer::before {
 <section class="menu-section" id="cakes">
   <div class="section-header">
     <div class="section-icon">🎂</div>
-    <div><h2 class="section-title" data-i18n="cat_cakes">Cakes</h2></div>
+    <div><h2 class="section-title" data-i18n="cat_cakes">Cakes & Tarts</h2></div>
     <div class="section-line"></div>
   </div>
   <div class="menu-grid">
     <div class="menu-card">
       <div class="card-image-wrap">
-        <img class="card-thumb" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="Lemon Ricotta">
+        <img class="card-thumb" src="lemon_pie.jpg" alt="Lemon Pie">
         <div class="card-img-overlay"></div><div class="card-reflection"></div>
       </div>
       <div class="card-body">
         <span class="badge badge-popular">♥ <span data-i18n="b_popular">Popular</span></span>
-        <div class="card-name" data-i18n="cak1_name">Lemon Ricotta Cake</div>
-        <div class="card-desc" data-i18n="cak1_desc">Moist Italian ricotta cake with lemon zest glaze and candied peel</div>
-        <div class="card-footer"><div class="card-price">₺100</div></div>
-      </div>
-    </div>
-    <div class="menu-card">
-      <div class="card-image-wrap">
-        <img class="card-thumb" src="https://images.unsplash.com/photo-1567171466295-4afa63d45416?w=500&q=80" alt="Pistachio Layer">
-        <div class="card-img-overlay"></div><div class="card-reflection"></div>
-      </div>
-      <div class="card-body">
-        <span class="badge badge-chef">✦ <span data-i18n="b_chef">Chef's Pick</span></span>
-        <div class="card-name" data-i18n="cak2_name">Pistachio & Raspberry Layer</div>
-        <div class="card-desc" data-i18n="cak2_desc">Four-layer sponge with pistachio buttercream and fresh raspberry preserve</div>
-        <div class="card-footer"><div class="card-price">₺130</div></div>
-      </div>
-    </div>
-    <div class="menu-card">
-      <div class="card-image-wrap">
-        <img class="card-thumb" src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=500&q=80" alt="Carrot Cake">
-        <div class="card-img-overlay"></div><div class="card-reflection"></div>
-      </div>
-      <div class="card-body">
-        <div class="card-name" data-i18n="cak3_name">Carrot Walnut Cake</div>
-        <div class="card-desc" data-i18n="cak3_desc">Spiced carrot cake with cream cheese frosting and toasted walnuts</div>
+        <div class="card-name" data-i18n="cak1_name">Lemon Pie</div>
+        <div class="card-desc" data-i18n="cak1_desc">Silky lemon curd in a buttery shortcrust shell, crowned with torched Italian meringue</div>
         <div class="card-footer"><div class="card-price">₺105</div></div>
       </div>
     </div>
     <div class="menu-card">
       <div class="card-image-wrap">
-        <img class="card-thumb" src="https://images.unsplash.com/photo-1502291020571-9f9320db30e4?w=500&q=80" alt="Opera Cake">
+        <img class="card-thumb" src="https://images.unsplash.com/photo-1562440499-64c9a111f713?w=500&q=80" alt="Apple Tart">
         <div class="card-img-overlay"></div><div class="card-reflection"></div>
       </div>
       <div class="card-body">
-        <div class="card-name" data-i18n="cak4_name">Opera Cake</div>
-        <div class="card-desc" data-i18n="cak4_desc">Classic French opera with coffee-soaked joconde sponge and dark chocolate ganache</div>
-        <div class="card-footer"><div class="card-price">₺120</div></div>
+        <span class="badge badge-chef">✦ <span data-i18n="b_chef">Chef's Pick</span></span>
+        <div class="card-name" data-i18n="cak2_name">Apple Tart</div>
+        <div class="card-desc" data-i18n="cak2_desc">Thinly fanned Granny Smith apples over almond cream in a flaky pâte brisée shell</div>
+        <div class="card-footer"><div class="card-price">₺110</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&q=80" alt="Raspberry Chocolate Tart">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name" data-i18n="cak3_name">Raspberry Chocolate Tart</div>
+        <div class="card-desc" data-i18n="cak3_desc">Dark Valrhona chocolate ganache in a cocoa shell, topped with fresh raspberries and gold leaf</div>
+        <div class="card-footer"><div class="card-price">₺125</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="monkey_bread.jpg" alt="Monkey Bread">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <span class="badge badge-new">✶ <span data-i18n="b_new">New</span></span>
+        <div class="card-name" data-i18n="cak4_name">Monkey Bread</div>
+        <div class="card-desc" data-i18n="cak4_desc">Pull-apart dough pillows rolled in cinnamon sugar and drenched in warm caramel glaze</div>
+        <div class="card-footer"><div class="card-price">₺115</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=500&q=80" alt="New York Roll">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name" data-i18n="cak5_name">New York Roll</div>
+        <div class="card-desc" data-i18n="cak5_desc">Giant ring-shaped croissant stuffed with cream cheese filling, glazed and dusted with sugar</div>
+        <div class="card-footer"><div class="card-price">₺130</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="https://images.unsplash.com/photo-1481390371763-a5a99c5e3e6c?w=500&q=80" alt="Berry Danish">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <span class="badge badge-popular">♥ <span data-i18n="b_popular">Popular</span></span>
+        <div class="card-name" data-i18n="cak6_name">Berry Danish</div>
+        <div class="card-desc" data-i18n="cak6_desc">Laminated pastry pinwheel with vanilla custard cream and a medley of fresh seasonal berries</div>
+        <div class="card-footer"><div class="card-price">₺100</div></div>
       </div>
     </div>
   </div>
@@ -1119,31 +1161,44 @@ footer::before {
 <section class="menu-section" id="croissants">
   <div class="section-header">
     <div class="section-icon">🥐</div>
-    <div><h2 class="section-title" data-i18n="cat_croissants">Croissants</h2></div>
+    <div><h2 class="section-title" data-i18n="cat_croissants">Croissants & Pastries</h2></div>
     <div class="section-line"></div>
   </div>
   <div class="menu-grid">
     <div class="menu-card">
       <div class="card-image-wrap">
-        <img class="card-thumb" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&q=80" alt="Butter Croissant">
+        <img class="card-thumb" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&q=80" alt="Plain Croissant">
         <div class="card-img-overlay"></div><div class="card-reflection"></div>
       </div>
       <div class="card-body">
         <span class="badge badge-popular">♥ <span data-i18n="b_popular">Popular</span></span>
-        <div class="card-name" data-i18n="cro1_name">Butter Croissant</div>
+        <div class="card-name" data-i18n="cro1_name">Plain Croissant</div>
         <div class="card-desc" data-i18n="cro1_desc">Classic hand-rolled with French AOP butter — flaky, golden, timeless</div>
         <div class="card-footer"><div class="card-price">₺75</div></div>
       </div>
     </div>
     <div class="menu-card">
       <div class="card-image-wrap">
-        <img class="card-thumb" src="https://images.unsplash.com/photo-1599785209707-a456fc1337bb?w=500&q=80" alt="Almond Croissant">
+        <img class="card-thumb" src="IMG-20260425-WA0001.jpg" alt="Strawberry Croissant">
         <div class="card-img-overlay"></div><div class="card-reflection"></div>
       </div>
       <div class="card-body">
-        <div class="card-name" data-i18n="cro2_name">Almond Croissant</div>
-        <div class="card-desc" data-i18n="cro2_desc">Double-baked with rich frangipane filling, topped with flaked almonds and icing sugar</div>
+        <span class="badge badge-new">✶ <span data-i18n="b_new">New</span></span>
+        <div class="card-name" data-i18n="cro2_name">Strawberry Croissant</div>
+        <div class="card-desc" data-i18n="cro2_desc">Buttery croissant filled with strawberry compote and vanilla Chantilly cream</div>
         <div class="card-footer"><div class="card-price">₺90</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="pistacho.jpg" alt="Pistachio Croissant">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <span class="badge badge-chef">✦ <span data-i18n="b_chef">Chef's Pick</span></span>
+        <div class="card-name" data-i18n="cro3_name">Pistachio Croissant</div>
+        <div class="card-desc" data-i18n="cro3_desc">Double-baked with Sicilian pistachio frangipane and crushed pistachio topping</div>
+        <div class="card-footer"><div class="card-price">₺100</div></div>
       </div>
     </div>
     <div class="menu-card">
@@ -1152,21 +1207,240 @@ footer::before {
         <div class="card-img-overlay"></div><div class="card-reflection"></div>
       </div>
       <div class="card-body">
-        <span class="badge badge-chef">✦ <span data-i18n="b_chef">Chef's Pick</span></span>
-        <div class="card-name" data-i18n="cro3_name">Pain au Chocolat</div>
-        <div class="card-desc" data-i18n="cro3_desc">Buttery layers wrapped around two batons of Valrhona dark chocolate</div>
+        <div class="card-name" data-i18n="cro4_name">Pain au Chocolat</div>
+        <div class="card-desc" data-i18n="cro4_desc">Buttery layers wrapped around two batons of Valrhona dark chocolate</div>
         <div class="card-footer"><div class="card-price">₺85</div></div>
       </div>
     </div>
     <div class="menu-card">
       <div class="card-image-wrap">
-        <img class="card-thumb" src="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=500&q=80" alt="Cheese Croissant">
+        <img class="card-thumb" src="IMG-20260425-WA0002.jpg" alt="Guava and Cheese Danish">
         <div class="card-img-overlay"></div><div class="card-reflection"></div>
       </div>
       <div class="card-body">
-        <div class="card-name" data-i18n="cro4_name">Gruyère & Herb</div>
-        <div class="card-desc" data-i18n="cro4_desc">Savory croissant filled with aged Gruyère and fresh thyme — warm from the oven</div>
+        <span class="badge badge-popular">♥ <span data-i18n="b_popular">Popular</span></span>
+        <div class="card-name" data-i18n="cro5_name">Guava & Cheese Danish</div>
+        <div class="card-desc" data-i18n="cro5_desc">Open-faced pastry with cream cheese and sweet guava paste — a tropical classic</div>
         <div class="card-footer"><div class="card-price">₺95</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="IMG-20260425-WA0003.jpg" alt="Chocolate Star">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name" data-i18n="cro6_name">Chocolate Star</div>
+        <div class="card-desc" data-i18n="cro6_desc">Star-shaped laminated pastry layered with dark chocolate spread and a crispy glaze</div>
+        <div class="card-footer"><div class="card-price">₺95</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="IMG-20260425-WA0004.jpg" alt="Nutella Croissant">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name" data-i18n="cro7_name">Nutella Croissant</div>
+        <div class="card-desc" data-i18n="cro7_desc">Generously filled with Nutella hazelnut cream and dusted with powdered sugar</div>
+        <div class="card-footer"><div class="card-price">₺90</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="IMG-20260425-WA0005.jpg" alt="Palmiers">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <span class="badge badge-chef">✦ <span data-i18n="b_chef">Chef's Pick</span></span>
+        <div class="card-name" data-i18n="cro8_name">Palmiers</div>
+        <div class="card-desc" data-i18n="cro8_desc">Caramelized puff pastry hearts — crisp, golden, and irresistibly buttery</div>
+        <div class="card-footer"><div class="card-price">₺70</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="creme.jpg" alt="Crème Brûlée Pastry">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <span class="badge badge-new">✶ <span data-i18n="b_new">New</span></span>
+        <div class="card-name" data-i18n="cro9_name">Grème-Brûlée</div>
+        <div class="card-desc" data-i18n="cro9_desc">Croissant filled with Tahitian vanilla custard cream, torched to a perfect caramel crust</div>
+        <div class="card-footer"><div class="card-price">₺110</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="blueberry_danish.jpg" alt="Blueberry Danish">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name" data-i18n="cro10_name">Blueberry Danish</div>
+        <div class="card-desc" data-i18n="cro10_desc">Laminated pastry with vanilla custard and fresh blueberries glazed with lemon syrup</div>
+        <div class="card-footer"><div class="card-price">₺95</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="cinnemon_roll.jpg" alt="Cinnamon Roll">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <span class="badge badge-popular">♥ <span data-i18n="b_popular">Popular</span></span>
+        <div class="card-name" data-i18n="cro11_name">Cinnamon Roll</div>
+        <div class="card-desc" data-i18n="cro11_desc">Soft swirled brioche with cinnamon-brown sugar filling and cream cheese frosting</div>
+        <div class="card-footer"><div class="card-price">₺95</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="ferrero.jpg" alt="Ferrero Rocher">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name" data-i18n="cro12_name">Ferrero Rocher</div>
+        <div class="card-desc" data-i18n="cro12_desc">Chocolate-hazelnut filled pastry with a crunchy praline shell — pure indulgence</div>
+        <div class="card-footer"><div class="card-price">₺110</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="everything.jpg" alt="Dubai Pistachio Cruffin">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <span class="badge badge-chef">✦ <span data-i18n="b_chef">Chef's Pick</span></span>
+        <div class="card-name" data-i18n="cro13_name">Dubai Style Pistachio Cruffin</div>
+        <div class="card-desc" data-i18n="cro13_desc">Croissant-muffin hybrid filled with Dubai-style pistachio cream and crispy kataifi</div>
+        <div class="card-footer"><div class="card-price">₺130</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="everythingcrofin.jpg" alt="Everything Cruffin">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <span class="badge badge-new">✶ <span data-i18n="b_new">New</span></span>
+        <div class="card-name" data-i18n="cro14_name">Everything Cruffin</div>
+        <div class="card-desc" data-i18n="cro14_desc">Savory cruffin topped with everything bagel seasoning — sesame, poppy, onion and garlic</div>
+        <div class="card-footer"><div class="card-price">₺105</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="hamchiz.jpg" alt="Ham and Cheese Croissant">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name" data-i18n="cro15_name">Ham & Cheese Croissant</div>
+        <div class="card-desc" data-i18n="cro15_desc">Classic French croissant filled with Black Forest ham and melted Gruyère, baked until golden</div>
+        <div class="card-footer"><div class="card-price">₺100</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="vanilaedcar.jpg" alt="Vanilla Eclair">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <span class="badge badge-popular">♥ <span data-i18n="b_popular">Popular</span></span>
+        <div class="card-name" data-i18n="cro16_name">Vanilla Éclair</div>
+        <div class="card-desc" data-i18n="cro16_desc">Choux pastry filled with silky vanilla pastry cream and glazed with white fondant icing</div>
+        <div class="card-footer"><div class="card-price">₺95</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="almondcrosan.jpg" alt="Almond Croissant">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name" data-i18n="cro17_name">Almond Croissant</div>
+        <div class="card-desc" data-i18n="cro17_desc">Double-baked with rich almond frangipane, flaked almonds and a dusting of icing sugar</div>
+        <div class="card-footer"><div class="card-price">₺90</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="IMG-20260425-WA0000.jpg" alt="Pistachio Chocolate Roll">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <span class="badge badge-chef">✦ <span data-i18n="b_chef">Chef's Pick</span></span>
+        <div class="card-name" data-i18n="cro18_name">Pistachio Chocolate Roll</div>
+        <div class="card-desc" data-i18n="cro18_desc">Swirled roll layered with pistachio cream and dark chocolate — decadent and aromatic</div>
+        <div class="card-footer"><div class="card-price">₺115</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="https://images.unsplash.com/photo-1612203985729-70726954388c?w=500&q=80" alt="Raisins">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name" data-i18n="cro19_name">Raisins</div>
+        <div class="card-desc" data-i18n="cro19_desc">Spiral pastry with plump golden raisins, vanilla custard and a light orange glaze</div>
+        <div class="card-footer"><div class="card-price">₺80</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=500&q=80" alt="Almond Financier">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <span class="badge badge-new">✶ <span data-i18n="b_new">New</span></span>
+        <div class="card-name" data-i18n="cro20_name">Almond Financier</div>
+        <div class="card-desc" data-i18n="cro20_desc">Tender French brown-butter cake with almond flour and a golden crisp exterior</div>
+        <div class="card-footer"><div class="card-price">₺85</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=500&q=80" alt="Chocolate Cruffin">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name" data-i18n="cro21_name">Chocolate Cruffin</div>
+        <div class="card-desc" data-i18n="cro21_desc">Croissant-muffin swirl filled with dark chocolate ganache and dusted with cocoa powder</div>
+        <div class="card-footer"><div class="card-price">₺115</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="https://images.unsplash.com/photo-1549931319-a545dcf3bc7b?w=500&q=80" alt="Pan Suizo">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <span class="badge badge-popular">♥ <span data-i18n="b_popular">Popular</span></span>
+        <div class="card-name" data-i18n="cro22_name">Pan Suizo</div>
+        <div class="card-desc" data-i18n="cro22_desc">Soft Swiss-style sweet bun with a sugared crust — pillowy, delicate and lightly sweet</div>
+        <div class="card-footer"><div class="card-price">₺80</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="https://images.unsplash.com/photo-1593830616234-cb9e4c53e2ac?w=500&q=80" alt="Dulce de Leche Croissant">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <span class="badge badge-chef">✦ <span data-i18n="b_chef">Chef's Pick</span></span>
+        <div class="card-name" data-i18n="cro23_name">Dulce de Leche Croissant</div>
+        <div class="card-desc" data-i18n="cro23_desc">Flaky croissant filled and drizzled with slow-cooked Argentine dulce de leche caramel</div>
+        <div class="card-footer"><div class="card-price">₺100</div></div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="card-image-wrap">
+        <img class="card-thumb" src="ceosan.jpg" alt="Croissant">
+        <div class="card-img-overlay"></div><div class="card-reflection"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name" data-i18n="cro24_name">Croissant</div>
+        <div class="card-desc" data-i18n="cro24_desc">Our signature house croissant — 72-hour laminated dough, impossibly light and shatteringly crisp</div>
+        <div class="card-footer"><div class="card-price">₺75</div></div>
       </div>
     </div>
   </div>
@@ -1340,14 +1614,36 @@ const i18n = {
     des3_name:"Rose Mille-Feuille", des3_desc:"Layers of crispy pastry filled with rose cream and lychee jelly",
     des4_name:"Tiramisu", des4_desc:"Espresso-soaked ladyfingers layered with mascarpone and dusted with cacao",
     des5_name:"Cheesecake Jar", des5_desc:"No-bake New York style cheesecake with seasonal fruit compote, served in a jar",
-    cak1_name:"Lemon Ricotta Cake", cak1_desc:"Moist Italian ricotta cake with lemon zest glaze and candied peel",
-    cak2_name:"Pistachio & Raspberry Layer", cak2_desc:"Four-layer sponge with pistachio buttercream and fresh raspberry preserve",
-    cak3_name:"Carrot Walnut Cake", cak3_desc:"Spiced carrot cake with cream cheese frosting and toasted walnuts",
-    cak4_name:"Opera Cake", cak4_desc:"Classic French opera with coffee-soaked joconde sponge and dark chocolate ganache",
-    cro1_name:"Butter Croissant", cro1_desc:"Classic hand-rolled with French AOP butter — flaky, golden, timeless",
-    cro2_name:"Almond Croissant", cro2_desc:"Double-baked with rich frangipane filling, topped with flaked almonds and icing sugar",
-    cro3_name:"Pain au Chocolat", cro3_desc:"Buttery layers wrapped around two batons of Valrhona dark chocolate",
-    cro4_name:"Gruyère & Herb", cro4_desc:"Savory croissant filled with aged Gruyère and fresh thyme — warm from the oven",
+    cak1_name:"Lemon Pie", cak1_desc:"Silky lemon curd in a buttery shortcrust shell, crowned with torched Italian meringue",
+    cak2_name:"Apple Tart", cak2_desc:"Thinly fanned Granny Smith apples over almond cream in a flaky pâte brisée shell",
+    cak3_name:"Raspberry Chocolate Tart", cak3_desc:"Dark Valrhona chocolate ganache in a cocoa shell, topped with fresh raspberries and gold leaf",
+    cak4_name:"Monkey Bread", cak4_desc:"Pull-apart dough pillows rolled in cinnamon sugar and drenched in warm caramel glaze",
+    cak5_name:"New York Roll", cak5_desc:"Giant ring-shaped croissant stuffed with cream cheese filling, glazed and dusted with sugar",
+    cak6_name:"Berry Danish", cak6_desc:"Laminated pastry pinwheel with vanilla custard cream and a medley of fresh seasonal berries",
+    cro1_name:"Plain Croissant", cro1_desc:"Classic hand-rolled with French AOP butter — flaky, golden, timeless",
+    cro2_name:"Strawberry Croissant", cro2_desc:"Buttery croissant filled with strawberry compote and vanilla Chantilly cream",
+    cro3_name:"Pistachio Croissant", cro3_desc:"Double-baked with Sicilian pistachio frangipane and crushed pistachio topping",
+    cro4_name:"Pain au Chocolat", cro4_desc:"Buttery layers wrapped around two batons of Valrhona dark chocolate",
+    cro5_name:"Guava & Cheese Danish", cro5_desc:"Open-faced pastry with cream cheese and sweet guava paste — a tropical classic",
+    cro6_name:"Chocolate Star", cro6_desc:"Star-shaped laminated pastry layered with dark chocolate spread and a crispy glaze",
+    cro7_name:"Nutella Croissant", cro7_desc:"Generously filled with Nutella hazelnut cream and dusted with powdered sugar",
+    cro8_name:"Palmiers", cro8_desc:"Caramelized puff pastry hearts — crisp, golden, and irresistibly buttery",
+    cro9_name:"Grème-Brûlée", cro9_desc:"Croissant filled with Tahitian vanilla custard cream, torched to a perfect caramel crust",
+    cro10_name:"Blueberry Danish", cro10_desc:"Laminated pastry with vanilla custard and fresh blueberries glazed with lemon syrup",
+    cro11_name:"Cinnamon Roll", cro11_desc:"Soft swirled brioche with cinnamon-brown sugar filling and cream cheese frosting",
+    cro12_name:"Ferrero Rocher", cro12_desc:"Chocolate-hazelnut filled pastry with a crunchy praline shell — pure indulgence",
+    cro13_name:"Dubai Style Pistachio Cruffin", cro13_desc:"Croissant-muffin hybrid filled with Dubai-style pistachio cream and crispy kataifi",
+    cro14_name:"Everything Cruffin", cro14_desc:"Savory cruffin topped with everything bagel seasoning — sesame, poppy, onion and garlic",
+    cro15_name:"Ham & Cheese Croissant", cro15_desc:"Classic French croissant filled with Black Forest ham and melted Gruyère, baked until golden",
+    cro16_name:"Vanilla Éclair", cro16_desc:"Choux pastry filled with silky vanilla pastry cream and glazed with white fondant icing",
+    cro17_name:"Almond Croissant", cro17_desc:"Double-baked with rich almond frangipane, flaked almonds and a dusting of icing sugar",
+    cro18_name:"Pistachio Chocolate Roll", cro18_desc:"Swirled roll layered with pistachio cream and dark chocolate — decadent and aromatic",
+    cro19_name:"Raisins", cro19_desc:"Spiral pastry with plump golden raisins, vanilla custard and a light orange glaze",
+    cro20_name:"Almond Financier", cro20_desc:"Tender French brown-butter cake with almond flour and a golden crisp exterior",
+    cro21_name:"Chocolate Cruffin", cro21_desc:"Croissant-muffin swirl filled with dark chocolate ganache and dusted with cocoa powder",
+    cro22_name:"Pan Suizo", cro22_desc:"Soft Swiss-style sweet bun with a sugared crust — pillowy, delicate and lightly sweet",
+    cro23_name:"Dulce de Leche Croissant", cro23_desc:"Flaky croissant filled and drizzled with slow-cooked Argentine dulce de leche caramel",
+    cro24_name:"Croissant", cro24_desc:"Our signature house croissant — 72-hour laminated dough, impossibly light and shatteringly crisp",
     br1_name:"Eggs Benedict", br1_desc:"Poached free-range eggs on toasted brioche with hollandaise and smoked salmon",
     br2_name:"Avocado Toast", br2_desc:"Smashed avocado on sourdough with poached egg, chili flakes and microgreens",
     br3_name:"Brioche French Toast", br3_desc:"Thick-cut brioche soaked in vanilla custard, served with berry compote and cream",
@@ -1393,14 +1689,36 @@ const i18n = {
     des3_name:"Gül Mille-Feuille", des3_desc:"Gül kremalı ve liçi jöleli çıtır hamur katmanları",
     des4_name:"Tiramisu", des4_desc:"Espresso ıslatılmış bisküvi, maskarpone ve kakao",
     des5_name:"Cheesecake Kavanoz", des5_desc:"New York tarzı cheesecake, mevsim meyve kompostosu ile kavanozda",
-    cak1_name:"Limon Ricotta Keki", cak1_desc:"Limonlu ricotta keki, şekerlenmiş limon kabuğu ile",
-    cak2_name:"Antepfıstığı & Ahududu Katmanlı", cak2_desc:"Dört katlı bisküvi, antepfıstıklı krem ve taze ahududu",
-    cak3_name:"Havuç Cevizli Kek", cak3_desc:"Baharatlı havuç keki, krem peynir kreması ve kavrulmuş ceviz",
-    cak4_name:"Opera Keki", cak4_desc:"Klasik Fransız opera keki, kahve bisküvi ve bitter çikolata ganaj",
-    cro1_name:"Tereyağlı Kruvasan", cro1_desc:"Fransız AOP tereyağı ile el açması — çıtır, altın, zamansız",
-    cro2_name:"Bademli Kruvasan", cro2_desc:"İki kez pişirilmiş, frangipan dolgulu, badem dilimleri ile",
-    cro3_name:"Pain au Chocolat", cro3_desc:"Valrhona bitter çikolata batonları etrafında çıtır hamur katmanları",
-    cro4_name:"Gruyère & Ot", cro4_desc:"Olgunlaştırılmış Gruyère ve taze kekikle dolu tuzlu kruvasan",
+    cak1_name:"Limon Tart", cak1_desc:"Tereyağlı kısa hamur içinde limon ezmesi ve İtalyan merengi ile",
+    cak2_name:"Elma Tart", cak2_desc:"Badem kreması üzerinde ince dilimlenmiş Granny Smith elmaları",
+    cak3_name:"Frambuaz Çikolata Tart", cak3_desc:"Kakao kabuğunda Valrhona çikolata ganajı, taze frambuaz ve altın yaprak ile",
+    cak4_name:"Maymun Ekmek", cak4_desc:"Tarçınlı şekerde yuvarlanan hamur topları, sıcak karamel sosu ile",
+    cak5_name:"New York Roll", cak5_desc:"Krem peynir dolgulu dev halka kruvasanı, şekerle kaplanmış",
+    cak6_name:"Meyveli Danish", cak6_desc:"Vanilyalı muhallebi kremalı ve taze mevsim meyveli çıtır hamur",
+    cro1_name:"Sade Kruvasan", cro1_desc:"Fransız AOP tereyağı ile el açması — çıtır, altın, zamansız",
+    cro2_name:"Çilekli Kruvasan", cro2_desc:"Çilek kompostosu ve vanilyalı Chantilly kremalı tereyağlı kruvasan",
+    cro3_name:"Fıstıklı Kruvasan", cro3_desc:"Sicilya fıstıklı frangipan ile çift pişirilmiş, üzeri fıstık kırıntılı",
+    cro4_name:"Pain au Chocolat", cro4_desc:"Valrhona bitter çikolata batonları etrafında çıtır hamur katmanları",
+    cro5_name:"Guava & Peynirli Danish", cro5_desc:"Krem peynir ve tatlı guava ezmeli açık hamur — tropikal bir klasik",
+    cro6_name:"Çikolatalı Yıldız", cro6_desc:"Bitter çikolata kremalı ve parlak glazürlü yıldız şekilli hamur",
+    cro7_name:"Nutella Kruvasanı", cro7_desc:"Nutella fındıklı krema dolgulu, pudra şekerli",
+    cro8_name:"Palmier", cro8_desc:"Karamelize milföy kalpleri — çıtır, altın ve direnilemez tereyağlı",
+    cro9_name:"Krem Brüle Kruvasanı", cro9_desc:"Tahiti vanilyalı muhallebi kremalı, mükemmel karamelize kabuklu kruvasan",
+    cro10_name:"Yaban Mersinli Danish", cro10_desc:"Vanilyalı muhallebi ve limon glazürüyle taze yaban mersini",
+    cro11_name:"Tarçınlı Rulo", cro11_desc:"Tarçın-esmer şeker dolgulu yumuşak brioche, krem peynir kremalı",
+    cro12_name:"Ferrero Rocher", cro12_desc:"Çıtır pralin kabuklu çikolata-fındık kremalı hamur",
+    cro13_name:"Dubai Tarzı Fıstıklı Cruffin", cro13_desc:"Dubai tarzı fıstık kreması ve çıtır kadayıf dolgulu cruffin",
+    cro14_name:"Everything Cruffin", cro14_desc:"Susam, haşhaş, soğan ve sarımsaklı tuzlu cruffin",
+    cro15_name:"Jambon & Peynirli Kruvasan", cro15_desc:"Siyah Orman jambonu ve erimiş Gruyère ile Fransız kruvasanı",
+    cro16_name:"Vanilyalı Ekler", cro16_desc:"Vanilyalı muhallebi kremalı, beyaz fondanla kaplı choux hamuru",
+    cro17_name:"Bademli Kruvasan", cro17_desc:"Zengin badem frangipan dolgulu, badem dilimleri ve pudra şekeri ile",
+    cro18_name:"Fıstıklı Çikolatalı Rulo", cro18_desc:"Fıstık kreması ve bitter çikolatalı sarmal rulo — lezzetli ve aromatik",
+    cro19_name:"Üzümlü", cro19_desc:"Dolgun altın kuru üzümlü, vanilyalı muhallebi ve portakal glazürüyle sarmal hamur",
+    cro20_name:"Badem Financier", cro20_desc:"Altın çıtır kabuklu Fransız kahverengi tereyağlı badem keki",
+    cro21_name:"Çikolatalı Cruffin", cro21_desc:"Bitter çikolata ganajlı, kakao tozlu kruvasan-muffin karması",
+    cro22_name:"Pan Suizo", cro22_desc:"Şekerli kabuklu yumuşak İsviçre tarzı tatlı ekmek",
+    cro23_name:"Dulce de Leche Kruvasanı", cro23_desc:"Arjantin dulce de leche karameli dolgulu çıtır kruvasan",
+    cro24_name:"Kruvasan", cro24_desc:"Imza kruvasanımız — 72 saatlik katmanlı hamur, inanılmaz hafif ve çıtır",
     br1_name:"Eggs Benedict", br1_desc:"Poşe yumurta, brioche, hollandaise sos ve füme somon",
     br2_name:"Avokado Toast", br2_desc:"Ezilmiş avokado, poşe yumurta, chili ve mikro yeşillikler",
     br3_name:"Brioche French Toast", br3_desc:"Vanilyalı kremanın içinde ıslatılmış kalın brioche, meyve kompostosu ile",
@@ -1446,14 +1764,36 @@ const i18n = {
     des3_name:"Розовый Мильфей", des3_desc:"Слоёное тесто с розовым кремом и желе из личи",
     des4_name:"Тирамису", des4_desc:"Бисквит в эспрессо с маскарпоне и какао",
     des5_name:"Чизкейк в Банке", des5_desc:"Нью-йоркский чизкейк с фруктовым компотом в банке",
-    cak1_name:"Лимонный Торт с Рикоттой", cak1_desc:"Влажный торт рикотта с лимонной глазурью",
-    cak2_name:"Фисташково-Малиновый Торт", cak2_desc:"Четырёхслойный бисквит с фисташковым кремом и малиной",
-    cak3_name:"Морковный Торт с Грецким Орехом", cak3_desc:"Пряный морковный торт с кремом из сыра",
-    cak4_name:"Опера", cak4_desc:"Классический французский торт с кофе и тёмным шоколадом",
-    cro1_name:"Масляный Круассан", cro1_desc:"Ручной замес с французским маслом AOP — слоистый, золотистый",
-    cro2_name:"Миндальный Круассан", cro2_desc:"Двойная выпечка с франжипаном и миндальными хлопьями",
-    cro3_name:"Болевой Шоколад", cro3_desc:"Слоистое тесто с шоколадными батончиками Valrhona",
-    cro4_name:"Грюйер и Зелень", cro4_desc:"Солёный круассан с выдержанным грюйером и тимьяном",
+    cak1_name:"Лимонный Пай", cak1_desc:"Лимонный курд в масляном тарте с итальянской меренгой",
+    cak2_name:"Яблочный Тарт", cak2_desc:"Тонкие ломтики яблок Гренни Смит на миндальном креме",
+    cak3_name:"Малиново-Шоколадный Тарт", cak3_desc:"Ганаш Valrhona в какао-тарте со свежей малиной и золотым листом",
+    cak4_name:"Манки Брэд", cak4_desc:"Шарики теста в корице с карамельным соусом",
+    cak5_name:"Нью-Йорк Ролл", cak5_desc:"Гигантский круглый круассан с кремом из сливочного сыра",
+    cak6_name:"Ягодный Дэниш", cak6_desc:"Слоёное тесто с ванильным кремом и свежими ягодами",
+    cro1_name:"Простой Круассан", cro1_desc:"Классический ручной замес с французским маслом AOP",
+    cro2_name:"Клубничный Круассан", cro2_desc:"Круассан с клубничным компотом и ванильными сливками Шантийи",
+    cro3_name:"Фисташковый Круассан", cro3_desc:"Дважды выпеченный с сицилийским фисташковым франжипаном",
+    cro4_name:"Боль о Шоколя", cro4_desc:"Слоистое тесто вокруг двух батонов шоколада Valrhona",
+    cro5_name:"Дэниш с Гуавой и Сыром", cro5_desc:"Открытое тесто с кремчизом и гуавовой пастой",
+    cro6_name:"Шоколадная Звезда", cro6_desc:"Звёздообразное слоёное тесто с тёмным шоколадным кремом",
+    cro7_name:"Круассан с Нутеллой", cro7_desc:"Обильно наполненный ореховым кремом Nutella с сахарной пудрой",
+    cro8_name:"Пальмье", cro8_desc:"Карамелизованные сердечки из слоёного теста — хрустящие и маслянистые",
+    cro9_name:"Грем-Брюле", cro9_desc:"Круассан с ванильным кремом и карамелизованной корочкой",
+    cro10_name:"Черничный Дэниш", cro10_desc:"Слоёное тесто с ванильным кремом и свежей черникой",
+    cro11_name:"Синнабон", cro11_desc:"Мягкая бриошь с корицей и кремом из сливочного сыра",
+    cro12_name:"Ферреро Роше", cro12_desc:"Тесто с шоколадно-ореховым кремом и хрустящим пралине",
+    cro13_name:"Крафин по-Дубайски с Фисташкой", cro13_desc:"Гибрид круассана и маффина с фисташковым кремом и катаифи",
+    cro14_name:"Крафин Эвритинг", cro14_desc:"Солёный крафин с кунжутом, маком, луком и чесноком",
+    cro15_name:"Круассан с Ветчиной и Сыром", cro15_desc:"Французский круассан с ветчиной и расплавленным Gruyère",
+    cro16_name:"Ванильный Эклер", cro16_desc:"Заварное тесто с ванильным кремом и белой глазурью",
+    cro17_name:"Миндальный Круассан", cro17_desc:"Дважды выпеченный с миндальным франжипаном и лепестками",
+    cro18_name:"Фисташково-Шоколадный Рулет", cro18_desc:"Рулет с фисташковым кремом и тёмным шоколадом",
+    cro19_name:"С Изюмом", cro19_desc:"Спиральное тесто с изюмом, ванильным кремом и апельсиновой глазурью",
+    cro20_name:"Миндальный Финансье", cro20_desc:"Французский кекс на коричневом масле с миндальной мукой",
+    cro21_name:"Шоколадный Крафин", cro21_desc:"Спиральный крафин с ганашем из тёмного шоколада",
+    cro22_name:"Пан Суисо", cro22_desc:"Мягкая швейцарская сладкая булочка с сахарной корочкой",
+    cro23_name:"Круассан Дульсе де Лече", cro23_desc:"Хрустящий круассан с аргентинским карамельным кремом",
+    cro24_name:"Круассан", cro24_desc:"Наш фирменный круассан — 72-часовое слоёное тесто, невесомое и хрустящее",
     br1_name:"Яйца Бенедикт", br1_desc:"Пашот на бриоши с голландским соусом и копчёным лососем",
     br2_name:"Тост с Авокадо", br2_desc:"Авокадо на закваске с пашот, чили и микрозеленью",
     br3_name:"Французский Тост из Бриоши", br3_desc:"Бриошь в ванильном креме с ягодным компотом",
@@ -1464,6 +1804,81 @@ const i18n = {
     sp4_name:"Садовый Салат", sp4_desc:"Органическая зелень, козий сыр и белый бальзамик",
     footer_tagline:"Кафе & Кондитерская · Осн. 2020",
     footer_copy:"© 2026 DICHA. Все права защищены. Создано с любовью."
+  },
+
+  fa: {
+    cat_hot:"نوشیدنی‌های گرم", cat_cold:"نوشیدنی‌های سرد", cat_coffee:"قهوه",
+    cat_milkshakes:"میلک‌شیک", cat_desserts:"دسر", cat_cakes:"تارت و کیک",
+    cat_croissants:"کروسان و شیرینی", cat_breakfast:"صبحانه", cat_specials:"ویژه",
+    hero_tag:"کافه & شیرینی‌پزی", hero_subtitle:"جایی که هر جرعه داستانی می‌گوید",
+    hero_scroll:"منو را کشف کنید",
+    b_popular:"پرطرفدار", b_chef:"انتخاب سرآشپز", b_new:"جدید",
+    hot1_name:"چای لاته کلاسیک", hot1_desc:"چای سیاه ادویه‌دار با شیر جو دو سر و کمی دارچین",
+    hot2_name:"ارل گری میست", hot2_desc:"چای معطر برگاموت با فوم اسطوخودوس و یک لمس عسل",
+    hot3_name:"چای گل رز و هل", hot3_desc:"گلبرگ‌های لطیف رز با هل، دم‌کشیده و سرو گرم",
+    hot4_name:"لاته زردچوبه طلایی", hot4_desc:"زردچوبه و زنجبیل در شیر نارگیل گرم با فلفل سیاه",
+    hot5_name:"شکلات داغ", hot5_desc:"شکلات تلخ Valrhona در شیر مخملی با خامه",
+    hot6_name:"ماچای سفید", hot6_desc:"ماچا مراسم با شیر شکلات سفید",
+    cold1_name:"لیموناد هیبیسکوس", cold1_desc:"لیمو تازه‌فشرده و گل‌های خشک هیبیسکوس روی یخ",
+    cold2_name:"آب گل رز گازدار", cold2_desc:"آب معدنی حاوی عصاره رز و نعنای تازه",
+    cold3_name:"فیز اولونگ هلو", cold3_desc:"اولونگ کلد‌برو با شربت هلوی رسیده و کمی سودا",
+    cold4_name:"لیموناد گل باتل‌فلای", cold4_desc:"چای آبی که با افزودن لیمو بنفش می‌شود — جادو",
+    cold5_name:"کولر خیار و نعنا", cold5_desc:"آب خیار تازه با نعنا، لیمو و کمی آگاوه",
+    cof1_name:"فلت وایت", cof1_desc:"دبل اسپرسو با شیر بخارپز مخملی",
+    cof2_name:"کورتادو", cof2_desc:"اسپرسو و شیر گرم به نسبت مساوی — متعادل و ظریف",
+    cof3_name:"کلد برو تونیک", cof3_desc:"کلد برو ۱۲ ساعته با تونیک ممتاز و پوست لیمو",
+    cof4_name:"اسپرسو", cof4_desc:"تک‌منشأ اتیوپیایی، کوتاه و سنتی",
+    cof5_name:"کاپوچینو عسل و جو", cof5_desc:"کاپوچینو شیر جو با عسل گل‌های وحشی",
+    milk1_name:"ابر توت‌فرنگی", milk1_desc:"توت‌فرنگی تازه با بستنی وانیل و خامه سبک",
+    milk2_name:"مخمل شکلات تلخ", milk2_desc:"کاکائو ۷۰٪ با بستنی کارامل شور و سس فندق",
+    milk3_name:"شیک پسته و گل رز", milk3_desc:"بستنی پسته سیسیلی با آب گل رز و پسته خرد شده",
+    milk4_name:"کارامل بیسکوف", milk4_desc:"بستنی کارامل با کرم بیسکوف و خرده بیسکویت",
+    milk5_name:"ماچا نارگیل", milk5_desc:"ماچای مراسمی با سوربت نارگیل و پوشش برشته",
+    des1_name:"کرم بروله", des1_desc:"کاستارد وانیل تاهیتی با پوسته کارامل تورچ‌شده",
+    des2_name:"پاناکوتا", des2_desc:"دسر ایتالیایی ابریشمی با سس توت تازه",
+    des3_name:"میل‌فوی گل رز", des3_desc:"لایه‌های ترد خمیر با کرم رز و ژله لیچی",
+    des4_name:"تیرامیسو", des4_desc:"بیسکویت اسپرسو با ماسکارپونه و پودر کاکائو",
+    des5_name:"چیزکیک در شیشه", des5_desc:"چیزکیک نیویورکی با کمپوت میوه فصل در شیشه",
+    cak1_name:"پای لیمو", cak1_desc:"کرد لیمو در پوسته کره‌ای با مرنگ ایتالیایی تورچ‌شده",
+    cak2_name:"تارت سیب", cak2_desc:"ورقه‌های نازک سیب گرنی اسمیت روی کرم بادام در پوسته پیت بریزه",
+    cak3_name:"تارت شکلات و تمشک", cak3_desc:"گاناش شکلات Valrhona در پوسته کاکائویی با تمشک تازه و ورق طلا",
+    cak4_name:"مانکی برد", cak4_desc:"توپ‌های خمیر پیچیده در شکر دارچینی با سس کارامل گرم",
+    cak5_name:"نیویورک رول", cak5_desc:"کروسان حلقه‌ای بزرگ پر از کرم پنیر خامه‌ای با روکش قندی",
+    cak6_name:"دانیش توت‌ها", cak6_desc:"خمیر ورق‌زده با کرم کاستارد وانیل و ترکیب توت‌های تازه فصل",
+    cro1_name:"کروسان ساده", cro1_desc:"کروسان کلاسیک دست‌پیچ با کره فرانسوی — ترد، طلایی، جاودانه",
+    cro2_name:"کروسان توت‌فرنگی", cro2_desc:"کروسان کره‌ای پر از کمپوت توت‌فرنگی و خامه شانتیلی وانیل",
+    cro3_name:"کروسان پسته", cro3_desc:"دوبار پخته با فرانژیپان پسته سیسیلی و روکش پسته خرد شده",
+    cro4_name:"پن اوشکلا", cro4_desc:"لایه‌های کره‌ای دور دو باتون شکلات تلخ Valrhona",
+    cro5_name:"دانیش گواوا و پنیر", cro5_desc:"شیرینی روباز با کرم پنیر و رب گواوا شیرین — کلاسیک گرمسیری",
+    cro6_name:"ستاره شکلاتی", cro6_desc:"شیرینی ورق‌زده ستاره‌ای با لایه‌های کرم شکلات تلخ و روکش ترد",
+    cro7_name:"کروسان نوتلا", cro7_desc:"پر از کرم فندق نوتلا و پاشیده با شکر پودری",
+    cro8_name:"پالمیه", cro8_desc:"قلب‌های خمیر هزارلا کارامل‌شده — ترد، طلایی و اغواگر",
+    cro9_name:"گرم بروله", cro9_desc:"کروسان پر از کرم وانیل تاهیتی با پوسته کارامل تورچ‌شده",
+    cro10_name:"دانیش زغال‌اخته", cro10_desc:"خمیر ورق‌زده با کاستارد وانیل و زغال‌اخته تازه با لعاب لیمو",
+    cro11_name:"رول دارچین", cro11_desc:"بریوش نرم دارچینی با خامه پنیر — گرم، خوش‌عطر و دلنواز",
+    cro12_name:"فررو روشه", cro12_desc:"شیرینی پر از کرم فندق شکلاتی با پوسته پرالین ترد",
+    cro13_name:"کرافین پسته دبی استایل", cro13_desc:"ترکیب کروسان و ماففین پر از کرم پسته دبی و کادایف ترد",
+    cro14_name:"اورتینگ کرافین", cro14_desc:"کرافین شور با ادویه بیگل — کنجد، خشخاش، پیاز و سیر",
+    cro15_name:"کروسان ژامبون و پنیر", cro15_desc:"کروسان فرانسوی پر از ژامبون جنگل سیاه و گرویر ذوب‌شده",
+    cro16_name:"اکلر وانیل", cro16_desc:"شو پر از کرم وانیل با روکش فوندانت سفید",
+    cro17_name:"کروسان بادام", cro17_desc:"دوبار پخته با فرانژیپان بادام غنی و پوشش بادام ورقه‌ای",
+    cro18_name:"رول پسته و شکلات", cro18_desc:"رول لایه‌ای با کرم پسته و شکلات تلخ — اعتیادآور و معطر",
+    cro19_name:"کشمش", cro19_desc:"شیرینی مارپیچی با کشمش طلایی، کاستارد وانیل و لعاب پرتقال",
+    cro20_name:"فینانسیه بادام", cro20_desc:"کیک فرانسوی کره قهوه‌ای با آرد بادام و پوسته طلایی ترد",
+    cro21_name:"کرافین شکلاتی", cro21_desc:"مارپیچ کروسان-ماففین پر از گاناش شکلات تلخ با پودر کاکائو",
+    cro22_name:"نان سوییسی", cro22_desc:"نان شیرین سبک سوییسی با پوسته قندی — نرم، لطیف و خوش‌طعم",
+    cro23_name:"کروسان دولسه دو لچه", cro23_desc:"کروسان ترد پر و آغشته به کارامل دولسه دو لچه آرژانتینی",
+    cro24_name:"کروسان", cro24_desc:"کروسان شاخص خانه — خمیر ۷۲ ساعته ورق‌زده، سبک و ترد",
+    br1_name:"تخم‌مرغ بندیکت", br1_desc:"تخم‌مرغ آب‌پز روی بریوش تست با سس هلندز و ماهی دودی",
+    br2_name:"تست آووکادو", br2_desc:"آووکادو له‌شده روی نان ترش با تخم‌مرغ آب‌پز و ریزجوانه",
+    br3_name:"توست بریوش فرانسوی", br3_desc:"بریوش ضخیم خیسانده در کاستارد وانیل با کمپوت توت",
+    br4_name:"کاسه گرانولا", br4_desc:"گرانولای خانگی با ماست یونانی، میوه‌های فصل و عسل",
+    sp1_name:"پاستای کرم ترافل", sp1_desc:"تالیولینی دست‌ساز در کرم ترافل سیاه با پارمیجانو رجیانو",
+    sp2_name:"ماهی آزاد تابه‌ای", sp2_desc:"ماهی آزاد نروژی با سس کره لیمو، کاپر و اسفناج",
+    sp3_name:"واگیو اسمش برگر", sp3_desc:"پتی دبل واگیو با چدار و آیولی ترافل در نان بریوش",
+    sp4_name:"سالاد باغچه", sp4_desc:"سبزیجات ارگانیک محلی، پنیر بز و بالزامیک سفید",
+    footer_tagline:"کافه & شیرینی‌پزی · تأسیس ۲۰۲۰",
+    footer_copy:"© ۲۰۲۶ دیچا. تمام حقوق محفوظ است. ساخته‌شده با عشق."
   },
 
   gr: {
@@ -1499,14 +1914,36 @@ const i18n = {
     des3_name:"Mille-Feuille Τριαντάφυλλο", des3_desc:"Τραγανό τυροπιτάκι με κρέμα τριαντάφυλλου και λίτσι",
     des4_name:"Tiramisu", des4_desc:"Πισκοτίνια σε espresso με μασκαρπόνε και κακάο",
     des5_name:"Cheesecake σε Βάζο", des5_desc:"New York cheesecake με κομπόστα φρούτων σε βάζο",
-    cak1_name:"Κέικ Λεμόνι Ricotta", cak1_desc:"Υγρό κέικ ricotta με γλάσο λεμονιού και κανταΐφι",
-    cak2_name:"Τούρτα Φιστίκι & Βατόμουρο", cak2_desc:"Τετραστρωματικό γλυκό με κρέμα φιστικιού",
-    cak3_name:"Κέικ Καρότο-Καρύδι", cak3_desc:"Κέικ καρότου με frosting τυριού και καρύδια",
-    cak4_name:"Opera Cake", cak4_desc:"Κλασική γαλλική opera με καφέ και μαύρη σοκολάτα",
-    cro1_name:"Κρουασάν Βουτύρου", cro1_desc:"Χειροποίητο με γαλλικό βούτυρο AOP — τραγανό, χρυσαφί",
-    cro2_name:"Κρουασάν Αμυγδάλου", cro2_desc:"Διπλοψημένο με frangipane και φιλέτα αμυγδάλου",
-    cro3_name:"Pain au Chocolat", cro3_desc:"Φύλλα βουτύρου γύρω από Valrhona σοκολάτα",
-    cro4_name:"Gruyère & Βότανα", cro4_desc:"Αλμυρό κρουασάν με matured Gruyère και θυμάρι",
+    cak1_name:"Πάι Λεμονιού", cak1_desc:"Λεμονόκρεμα σε τραγανή ζύμη με ιταλική μαρέγκα",
+    cak2_name:"Τάρτα Μήλου", cak2_desc:"Λεπτές φέτες μήλου πάνω σε αμυγδαλόκρεμα σε pâte brisée",
+    cak3_name:"Τάρτα Σοκολάτας-Βατόμουρου", cak3_desc:"Γκανάς Valrhona σε κακάο κέλυφος με φρέσκα βατόμουρα",
+    cak4_name:"Monkey Bread", cak4_desc:"Μπαλάκια ζύμης σε κανελοζάχαρο με ζεστή καραμελένια σάλτσα",
+    cak5_name:"New York Roll", cak5_desc:"Γιγαντιαίο στρογγυλό κρουασάν με κρέμα τυριού και ζάχαρη",
+    cak6_name:"Berry Danish", cak6_desc:"Φύλλο βουτύρου με κρέμα βανίλιας και φρέσκα εποχιακά φρούτα",
+    cro1_name:"Απλό Κρουασάν", cro1_desc:"Χειροποίητο με γαλλικό βούτυρο AOP — τραγανό, χρυσαφί, διαχρονικό",
+    cro2_name:"Κρουασάν Φράουλας", cro2_desc:"Κρουασάν με κομπόστα φράουλας και κρέμα Chantilly βανίλιας",
+    cro3_name:"Κρουασάν Φιστικιού", cro3_desc:"Διπλοψημένο με σικελικό φιστικόφρανζιπάν και κεφαλάτο φιστίκι",
+    cro4_name:"Pain au Chocolat", cro4_desc:"Φύλλα βουτύρου γύρω από Valrhona σοκολάτα",
+    cro5_name:"Danish Γκουάβα & Τυρί", cro5_desc:"Ανοιχτό τσουρέκι με κρέμα τυριού και πάστα γκουάβα",
+    cro6_name:"Αστέρι Σοκολάτας", cro6_desc:"Αστεροειδές φύλλο με σκούρο σοκολατένιο κρέμα",
+    cro7_name:"Κρουασάν Nutella", cro7_desc:"Γεμάτο κρέμα φουντουκιού Nutella και πουδραρισμένο",
+    cro8_name:"Παλμιέ", cro8_desc:"Καραμελωμένες καρδιές σφολιάτας — τραγανές και βουτυράτες",
+    cro9_name:"Γκρεμ-Μπρουλέ", cro9_desc:"Κρουασάν με κρέμα βανίλιας Ταϊτής και καραμελωμένη κρούστα",
+    cro10_name:"Danish Μύρτιλλου", cro10_desc:"Φύλλο ζύμης με κρέμα βανίλιας και φρέσκα μύρτιλλα",
+    cro11_name:"Κρουασάν Κανέλας", cro11_desc:"Μαλακή μπριός κανέλας με κρέμα τυριού — απαλή και αρωματική",
+    cro12_name:"Φερέρο Ρόσε", cro12_desc:"Τσουρέκι με κρέμα σοκολάτας-φουντουκιού και τραγανό πραλίνε",
+    cro13_name:"Dubai Style Φιστικένιο Cruffin", cro13_desc:"Κρουασάν-μαφίν με φιστικόκρεμα Dubai και τραγανό κανταΐφι",
+    cro14_name:"Everything Cruffin", cro14_desc:"Αλμυρό cruffin με σουσάμι, παπαρουνόσπορο, κρεμμύδι και σκόρδο",
+    cro15_name:"Κρουασάν Ζαμπόν & Τυρί", cro15_desc:"Γαλλικό κρουασάν με ζαμπόν Black Forest και λιωμένο Gruyère",
+    cro16_name:"Βανίλια Εκλέρ", cro16_desc:"Πάτα σου με βανιλόκρεμα και λευκό fondant",
+    cro17_name:"Κρουασάν Αμυγδάλου", cro17_desc:"Διπλοψημένο με αμυγδαλόφρανζιπάν και λεπτές φέτες αμυγδάλου",
+    cro18_name:"Ρολό Φιστίκι-Σοκολάτα", cro18_desc:"Στριφτό ρολό με φιστικόκρεμα και σκούρα σοκολάτα",
+    cro19_name:"Σταφίδες", cro19_desc:"Σπειροειδές τσουρέκι με σταφίδες, κρέμα βανίλιας και πορτοκαλένιο γλάσο",
+    cro20_name:"Αμυγδαλένιο Φινανσιέ", cro20_desc:"Γαλλικό κεκάκι καφεωμένου βουτύρου με αμυγδαλάλευρο",
+    cro21_name:"Σοκολατένιο Cruffin", cro21_desc:"Κρουασάν-μαφίν με γκανάς σοκολάτας και κακάο",
+    cro22_name:"Παν Σουίζο", cro22_desc:"Μαλακό ελβετικό γλυκό ψωμί με ζαχαρένια κρούστα",
+    cro23_name:"Κρουασάν Dulce de Leche", cro23_desc:"Τραγανό κρουασάν με αργεντίνικη καραμέλα dulce de leche",
+    cro24_name:"Κρουασάν", cro24_desc:"Το signature μας — ζύμη 72 ωρών, αέρινο και τραγανό",
     br1_name:"Eggs Benedict", br1_desc:"Ποσέ αυγά σε brioche με hollandaise και καπνιστό σολομό",
     br2_name:"Toast Αβοκάντο", br2_desc:"Πολτοποιημένο αβοκάντο σε sourdough με ποσέ αυγό",
     br3_name:"Γαλλική Brioche Toast", br3_desc:"Χοντρή brioche σε κρέμα βανίλιας με κομπόστα",
@@ -1531,13 +1968,23 @@ function setLang(lang) {
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.onclick.toString().includes(`'${lang}'`));
   });
+  // RTL support for Persian
+  if (lang === 'fa') {
+    document.body.classList.add('rtl');
+    document.documentElement.setAttribute('dir', 'rtl');
+    document.documentElement.setAttribute('lang', 'fa');
+  } else {
+    document.body.classList.remove('rtl');
+    document.documentElement.setAttribute('dir', 'ltr');
+    document.documentElement.setAttribute('lang', lang);
+  }
 }
 
 // ── THEME TOGGLE ──
 const themeToggleBtn = document.getElementById('themeToggle');
 function toggleTheme() {
   const isDark = document.body.classList.toggle('dark-mode');
-  themeToggleBtn.textContent = isDark ? '☀️' : '🌒';
+  themeToggleBtn.textContent = isDark ? '☀️' : '🌙';
   localStorage.setItem('dicha-theme', isDark ? 'dark' : 'light');
 }
 // Restore saved preference
